@@ -8,7 +8,7 @@ function Contact(){
         </h3>
         <div className="contact-input">
             <input type='email' placeholder="example@skill-mine.com" />
-            <a href="#">Contact</a>
+            <a href="#contact">Contact</a>
         </div>
 
         </div>

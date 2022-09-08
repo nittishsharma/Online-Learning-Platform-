@@ -1,22 +1,19 @@
-import React from "react";
-import About from "./Component/About";
-import Contact from "./Component/Contact";
-import Course from "./Component/Course";
-import Header from "./Component/Header";
+import { Route, Routes } from "react-router-dom";
+import Login from "./Component/login/login";
+import Register from "./Component/register/register";
+import Main from "../src/Main";
+import Dashboard from "./Component/Dashboard";
 
-import Testimonial from "./Component/Testimonials";
-import aboutimage from "./images/Frame 19.png"
-
-function App(){
+function App() {
     return (
-        <div className="App">
-            <Header />
-            <About img={aboutimage} title="Our Online Bootcamp Is An Immersive Learning Experience"/>
-            <Course />
-            <Testimonial />
-            <Contact />
+        <Routes>
 
-        </div>
+            <Route exact path="/" element={<Main />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/dashboard' element={<Dashboard />} />
+
+        </Routes>
     );
 }
 

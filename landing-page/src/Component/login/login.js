@@ -1,21 +1,84 @@
-import React from "react"
+import React, { useState } from "react"
+import { Link, useNavigate } from "react-router-dom";
+import styles from "./styles.module.css";
+
+// css modules ={styles.login_container}
+const Login = () => {
+    const navigate = useNavigate();
+    
+    const[email, setEmail] =useState('');
+    const[password, setPassword] =useState('');
+
+  
+    const loginUser = async (e) => {
+        e.preventDefault();
+
+        const res =  await fetch('/login',{
+            method : "POST",
+            headers : {
+                "Content-Type" :"application/json"
+            },
+            body:JSON.stringify({
+                email,
+                password
+            })
+        
+        });
+        const data =res.json();
+
+        if(res.status === 400 || !data){
+            window.alert("Invaild ")
+        }else{
+            window.alert("Login Succesfull")
+            navigate("/dashboard")
+        }
+    }
 
 
-const Login=({isShowLogin}) => {
+
     return (
-        <div className={`${isShowLogin ? "active" : ""} show`}>
-        <div className="login">
-            <h1>Login</h1>
-            <label>Username</label>
-            <input type="text" name="email" placeholder="Enter your Email"></input>
-            <label>Password</label>
-            <input type="password" name="password"placeholder="Enter your Password" ></input>
-            <div className="button">Login</div>
-            <div>or</div>
-            <div className="button" >Register</div>
+        <form method="POST">
+        <div className={styles.login_container}>
+
+            <div className={styles.login_form_container}>
+                <div className={styles.left}>
+                    <form className={styles.form_container} >
+                        <h1>Login to Your Account</h1>
+                        <input
+                            type="email"
+                            placeholder="Email"
+                            name="email"
+                            value ={email}
+                            onChange ={(e) => setEmail(e.target.value)}
+                            className={styles.input}
+                        />
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            name="password"
+                            value ={password}
+                            onChange={(e)=> setPassword(e.target.value)}
+                            className={styles.input}
+                        />
+                        <button type="submit" className={styles.green_btn} onClick={loginUser}>
+                            Log In
+                        </button>
+                    </form>
+                </div>
+                <div className={styles.right}>
+                    <h1>New Here ?</h1>
+                    <Link to="../register">
+                        <button type="button" className={styles.white_btn}>
+                            Register
+                        </button>
+                    </Link>
+                </div>
+            </div>
         </div>
-        </div>
+        </form>
     );
+
+
 };
 
 export default Login;

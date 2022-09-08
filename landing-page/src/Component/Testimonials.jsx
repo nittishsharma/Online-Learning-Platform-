@@ -1,5 +1,5 @@
 import React from "react";
-import Testimonialimg from "./Testimonialimg";
+
 
 
 
@@ -19,7 +19,7 @@ function Testimonial(){
                  offers everything I need including a website builder and email marketing options. It's a hub for a training startup
                   like mine."</p>
                   <div >
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv5ScTX6mGrUeqSyCna-GRBROsfzSa-AAA3w&usqp=CAU" />
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv5ScTX6mGrUeqSyCna-GRBROsfzSa-AAA3w&usqp=CAU" alt="testimonial_people"/>
                   <p >Muthuramalingam.K.S,</p>
                   <span>Training Entrepreneur, Sri Ram Stocks Solution</span>
                   </div>

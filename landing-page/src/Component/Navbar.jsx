@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import logo from "../images/logo.png"
+import logo from "../images/logo.png";
+import { Link} from 'react-router-dom';
+// import Login from "./login";
 
 
 
-function Navbar({handleLoginClick}){
+function Navbar(){
+    
 
-    const handleClick = () =>{
-        handleLoginClick();
-    }
+    
 
     const [nav,setnav] = useState(false);
 
@@ -32,13 +33,17 @@ function Navbar({handleLoginClick}){
             <ul className="menu">
                 <li><a href="#main">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#features">Course</a></li>
+                <li><a href="#course">Course</a></li>
                 <li><a href="#testimonials">Testimonial</a></li>
                 <li><a href="#contact">Contact Us</a></li>
-               <button onClick={handleClick} className="button button3">Log In</button>
+                <Link to="/login">
+                <button  className="button button3">Log In</button>
+                </Link>
+                
                
                {/* <button className="button button2">Join For Free</button>*/}
             </ul>
+            
             
         </nav>)
 

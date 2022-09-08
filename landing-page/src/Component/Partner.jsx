@@ -5,7 +5,7 @@ function Partner(){
     return(
         <div className="partner-img">
         <p>Partnering with  India's fast growing company</p>
-            <img src={Skillmine}></img>
+            <img src={Skillmine} alt="skillminer"></img>
         </div>
     )
 }

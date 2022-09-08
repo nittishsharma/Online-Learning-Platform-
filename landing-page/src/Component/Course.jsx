@@ -6,7 +6,7 @@ import Courseimage3 from '../images/feature_3.png';
 
 function Course(){
     return(
-        <div id="features">
+        <div id="course">
         <div className="a-container">
         <Coursebox  image={Courseimage} title="Java Script"/>
         <Coursebox  image={Courseimage2} title="React js"/>
